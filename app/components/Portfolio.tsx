@@ -8,6 +8,7 @@ import { ProjectCard } from "./ProjectCard";
 import { ScrollReveal } from "./ScrollReveal";
 import { Stats } from "./Stats";
 import { TechStack } from "./TechStack";
+import { ListeningRoom } from "./ListeningRoom";
 
 function SectionTitle({ first, second }: { first: string; second: string }) { return <h2 className="section-title"><span>{first}</span><em>{second}</em></h2>; }
 
@@ -30,6 +31,7 @@ export function Portfolio() {
     <section className="hero" aria-labelledby="hero-title"><div className="hero-details"><div className="hero-copy"><ScrollReveal delay={.04} distance={12}><p className="eyebrow">Software developer &amp; founder, Luit Studio</p></ScrollReveal><ScrollReveal delay={.1} distance={18}><p id="hero-title" className="mega-title"><span>Software</span><em>Developer</em></p></ScrollReveal><ScrollReveal delay={.18} distance={16}><p className="intro">Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.</p></ScrollReveal></div><Stats /><section className="services" aria-label="Services"><ScrollReveal delay={.12}><article className="service orange"><Layers3 /><h2>Dynamic Animation,<br />Motion Design</h2><button aria-label="Explore animation services"><ArrowUpRight /></button></article></ScrollReveal><ScrollReveal delay={.2}><article className="service lime"><LayoutPanelTop /><h2>Framer, Figma, Next.js,<br />React.js, TypeScript</h2><button aria-label="Explore development skills"><ArrowUpRight /></button></article></ScrollReveal></section></div></section>
     <section id="projects"><ScrollReveal><SectionTitle first="Recent" second="Projects" /></ScrollReveal><div className="project-list">{projects.map((project, index) => <ScrollReveal key={project.id} delay={Math.min(index * .09, .27)}><ProjectCard project={project} /></ScrollReveal>)}</div></section>
     <section id="experience" className="experience"><ScrollReveal><div><SectionTitle first="2 Years of" second="Experience" /></div></ScrollReveal><div className="timeline">{experiences.map(([company, desc, dates], index) => <ScrollReveal key={company} delay={Math.min(index * .1, .3)}><article><h3>{company}</h3><p>{desc}</p><small>{dates}</small></article></ScrollReveal>)}</div></section>
+    <ListeningRoom />
     <TechStack />
     <section className="thoughts"><ScrollReveal><SectionTitle first="Design" second="Thoughts" /></ScrollReveal><div className="articles">{articles.map(([title, excerpt, date, read], index) => <ScrollReveal key={title} delay={Math.min(index * .1, .3)}><article><h3>{title}</h3><p>{excerpt}</p><footer><time>{date}</time><span>{read}</span></footer></article></ScrollReveal>)}</div></section>
     <section id="contact" className="contact"><ScrollReveal><SectionTitle first="Let's Work" second="Together" /></ScrollReveal><ScrollReveal delay={.1}><ContactForm /></ScrollReveal></section>
